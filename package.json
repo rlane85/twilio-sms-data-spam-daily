@@ -4,6 +4,7 @@
   "description": "spam wife with data",
   "main": "daily.js",
   "scripts": {
+    "start": "node daily.js"
   },
   "repository": {
     "type": "git",
