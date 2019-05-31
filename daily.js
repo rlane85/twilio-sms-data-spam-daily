@@ -30,12 +30,6 @@ Feels Like: ${dsData.daily.data[1].apparentTemperatureLow}° - ${dsData.daily.da
 Rain Chance: ${dsData.daily.data[1].precipProbability * 100}%
 Powered by darksky.net`)
       })
-      .then(() => {
-        console.log(notification);
-      })
-      .catch(err => {
-        console.error(err);
-      });
   });
 
   request(config.WU_OPTIONS, (err, response, data) => {
@@ -50,12 +44,6 @@ Wind Speed: ${data.observations[0].imperial.windSpeed} mph
 Wind Direction: ${data.observations[0].winddir}
 Rain Today: ${data.observations[0].imperial.precipTotal} inches`)
       })
-      .then(() => {
-        console.log(notification);
-      })
-      .catch(err => {
-        console.error(err);
-      });
   });
   request(config.WUSUMMARY_OPTIONS, (err, response, data) => {
     if (err) { return console.log(err); }
@@ -69,9 +57,3 @@ Wind gust high: ${data.summaries[6].imperial.windgustHigh} mph
 `)
       })
   })
-    .then(() => {
-      console.log(notification);
-    })
-    .catch(err => {
-      console.error(err);
-    });
