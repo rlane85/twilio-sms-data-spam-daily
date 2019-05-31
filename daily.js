@@ -7,9 +7,9 @@ const twilio = require('twilio')(
 var dateFormat = require('dateformat');
 
 var numbers = new Array();
-var numbers = process.env.NUMBERS;
+var numbers = config.NUMBERS;
 
-const service = twilio.notify.services(config.TWILIO_NOTIFY_SERVICE_SID);
+const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
 
 const bindings = numbers.map(number => {
   return JSON.stringify({ binding_type: 'sms', address: number });
