@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/rlane85/twilio-sms-data-spam-michelle/issues"
   },
-  "homepage": "https://github.com/rlane85/twilio-sms-data-spam-michelle#readme"
+  "homepage": "https://github.com/rlane85/twilio-sms-data-spam-michelle#readme",
+  "dependencies": {
+    "request": "^2.88.0",
+    "twilio": "^3.31.1"
+  }
 }
