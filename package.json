@@ -5,7 +5,7 @@
   "main": "daily.js",
   "scripts": {
     "test": " node daily.js",
-    "start":"node daily.js"
+    "start": "node daily.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/rlane85/twilio-sms-data-spam-michelle#readme",
   "dependencies": {
+    "dateformat": "^3.0.3",
     "request": "^2.88.0",
     "twilio": "^3.31.1"
   }
