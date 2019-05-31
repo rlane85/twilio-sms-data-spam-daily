@@ -1,5 +1,3 @@
-const NUMBERS = ['+13214033188', '+13213683060'];
-
 const WU_OPTIONS = {
     uri: 'https://api.weather.com/v2/pws/observations/current',
     qs: {
