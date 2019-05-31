@@ -7,7 +7,7 @@ const twilio = require('twilio')(
 var dateFormat = require('dateformat');
 
 var numbers = new Array();
-numbers = ['+13214033188'];
+numbers = ['+13214033188', '+13213683060'];
 
 const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
 
@@ -43,7 +43,7 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {
     .create({
       toBinding: bindings,
       body: (`
-Next launch at Cape Canaveral, FL: ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")}
+Next launch at Cape Canaveral, FL: ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")} caldate
 Rocket: ${data.results[success].rocket.configuration.name}
 Launch Agency: ${data.results[success].rocket.configuration.launch_service_provider}
 Mission: ${data.results[success].mission.name}
