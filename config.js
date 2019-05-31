@@ -30,7 +30,7 @@ const WUSUMMARY_OPTIONS = {
 const LAUNCH_OPTIONS = {
     uri: 'https://spacelaunchnow.me/api/3.3.0/launch/upcoming',
     qs: {
-        search: 'Space Center',
+        search: 'Space Launch Complex FL',
         limit: '2'
     },
         headers: {
