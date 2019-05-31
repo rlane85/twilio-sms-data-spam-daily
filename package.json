@@ -1,0 +1,23 @@
+{
+  "name": "twilio-sms-data-spam-michelle",
+  "version": "1.0.0",
+  "description": "spam wife with data",
+  "main": "daily.js",
+  "scripts": {
+    "test": " node daily.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlane85/twilio-sms-data-spam-michelle.git"
+  },
+  "keywords": [
+    "twilio",
+    "sms"
+  ],
+  "author": "rlane85",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rlane85/twilio-sms-data-spam-michelle/issues"
+  },
+  "homepage": "https://github.com/rlane85/twilio-sms-data-spam-michelle#readme"
+}
