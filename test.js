@@ -42,4 +42,4 @@ Status: ${data.results[success].status.name}
 `
 });
 };
-console.log(dsForecast()+launch());
+console.log(launch());
