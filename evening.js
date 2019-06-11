@@ -26,7 +26,7 @@ ${dsData.daily.data[1].summary}
 Sunrise: ${dateFormat(dsData.daily.data[1].sunriseTime * 1000, "h:MM")}
 Sunset: ${dateFormat(dsData.daily.data[1].sunsetTime * 1000, "h:MM")}
 Moonphase: ${dsData.daily.data[1].moonPhase * 100}%
-Feels Like: ${dsData.daily.data[1].apparentTemperatureLow}° - ${dsData.daily.data[0].apparentTemperatureHigh}° (at ${dateFormat(dsData.daily.data[1].apparentTemperatureHighTime * 1000, "h:MM")})
+Feels Like: Low ${dsData.daily.data[1].apparentTemperatureLow}°, high ${dsData.daily.data[0].apparentTemperatureHigh}° (at ${dateFormat(dsData.daily.data[1].apparentTemperatureHighTime * 1000, "h:MM")})
 Rain Chance: ${dsData.daily.data[1].precipProbability * 100}%
 Powered by darksky.net`)
     })
