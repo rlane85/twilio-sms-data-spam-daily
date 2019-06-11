@@ -10,7 +10,7 @@ numbers = ['+13214033188', '+13213683060', '+13219600909', '+13212056878'];
 const bindings = numbers.map(number => {
   return JSON.stringify({ binding_type: 'sms', address: number });
 });
-
+function dsForecast(body) {
 request(config.DS_OPTIONS, (err, response, dsData) => {
   if (err) { return console.log(err); }
       body = `
@@ -23,6 +23,8 @@ Feels Like: ${dsData.daily.data[1].apparentTemperatureLow}° - ${dsData.daily.da
 Rain Chance: ${dsData.daily.data[1].precipProbability * 100}%
 Powered by darksky.net`
 });
+return body};
+function launch(body) {
 request(config.LAUNCH_OPTIONS, (err, response, data) => {
   if (err) { return console.log(err); }
   if (data.results[0].status.id == '3') {
@@ -39,4 +41,5 @@ Mission: ${data.results[success].mission.name}
 Status: ${data.results[success].status.name}
 `
 });
+return body};
 console.log(body);
