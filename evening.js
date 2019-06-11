@@ -7,7 +7,7 @@ const twilio = require('twilio')(
 var dateFormat = require('dateformat');
 
 var numbers = new Array();
-numbers = ['+13214033188'];//, '+13213683060'];
+numbers = ['+13214033188', '+13213683060', '+13219600909', '+13212056878'];
 
 const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
 
