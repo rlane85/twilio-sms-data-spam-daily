@@ -42,4 +42,3 @@ Status: ${data.results[success].status.name}
 `
 });
 };
-console.log(launch());
