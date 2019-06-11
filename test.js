@@ -13,7 +13,7 @@ const bindings = numbers.map(number => {
 function dsForecast(body) {
 request(config.DS_OPTIONS, (err, response, dsData) => {
   if (err) { return console.log(err); }
-      body = `
+      return body = `
 Forecast for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}:
 ${dsData.daily.data[1].summary}
 Sunrise: ${dateFormat(dsData.daily.data[1].sunriseTime * 1000, "h:MM")}
@@ -23,7 +23,7 @@ Feels Like: ${dsData.daily.data[1].apparentTemperatureLow}° - ${dsData.daily.da
 Rain Chance: ${dsData.daily.data[1].precipProbability * 100}%
 Powered by darksky.net`
 });
-return body};
+};
 function launch(body) {
 request(config.LAUNCH_OPTIONS, (err, response, data) => {
   if (err) { return console.log(err); }
@@ -33,7 +33,7 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {
   else {
     var success = 0
   }
-    body = body + `
+    return body = body + `
 Next launch at Cape Canaveral, FL: ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")}
 Rocket: ${data.results[success].rocket.configuration.name}
 Launch Agency: ${data.results[success].rocket.configuration.launch_service_provider}
@@ -41,7 +41,7 @@ Mission: ${data.results[success].mission.name}
 Status: ${data.results[success].status.name}
 `
 });
-return body};
+};
 dsForecast();
 launch();
 console.log(body);
