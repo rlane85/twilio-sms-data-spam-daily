@@ -46,4 +46,5 @@ https://github.com/rlane85/twilio-sms-data-spam`})
   .create({
     toBinding: bindings,
     body: launchMsg+dsMsg+epiMsg
+  });
 });
