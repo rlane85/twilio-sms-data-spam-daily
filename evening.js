@@ -55,5 +55,9 @@ notification = service.notifications
     toBinding: bindings,
     body: (`
 For more info please reply to this number with a keyword: current, summary, launch, or forecast (defaults to tomorrow; add keyword "today" to see the today's forecast - eg "forecast today").
+Link to known issues and list of things i would like to add: https://ahomeconnected.com/index.php/workin-on-it/
+Github: 
+https://github.com/rlane85/twilio-sms-data-spam-daily
+https://github.com/rlane85/twilio-sms-data-spam
 `)
 });
