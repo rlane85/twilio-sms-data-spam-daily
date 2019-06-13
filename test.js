@@ -1,4 +1,4 @@
-const request = require('request');
+const request = require('request-promise');
 const config = require('./config');
 const twilio = require('twilio')(
   process.env.TWILIO_ACCOUNT, process.env.TWILIO_TOKEN
