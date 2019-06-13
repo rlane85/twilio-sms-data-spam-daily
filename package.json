@@ -23,6 +23,7 @@
   "dependencies": {
     "dateformat": "^3.0.3",
     "request": "^2.88.0",
+    "request-promise": "^4.2.4",
     "twilio": "^3.31.1"
   }
 }
