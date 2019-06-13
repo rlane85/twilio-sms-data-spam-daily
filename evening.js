@@ -1,4 +1,3 @@
-// Grab the two libraries we use for getting data and sending messages
 const request = require('request');
 const config = require('./config');
 const twilio = require('twilio')(
@@ -50,4 +49,11 @@ Mission: ${data.results[success].mission.name}
 Status: ${data.results[success].status.name}
 `)
     });
+});
+notification = service.notifications
+  .create({
+    toBinding: bindings,
+    body: (`
+For more info please reply to this number with a keyword: current, summary, launch, or forecast (defaults to tomorrow; add keyword "today" to see the today's forecast - eg "forecast today").
+`)
 });
