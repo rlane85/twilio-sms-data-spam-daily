@@ -24,14 +24,16 @@ Sunset: ${dateFormat(dsData.daily.data[0].sunsetTime * 1000, "h:MM")}
 Moonphase: ${dsData.daily.data[0].moonPhase * 100}%
 Feels Like: ${dsData.daily.data[0].apparentTemperatureLow}° - ${dsData.daily.data[0].apparentTemperatureHigh}° (at ${dateFormat(dsData.daily.data[0].apparentTemperatureHighTime * 1000, "h:MM")})
 Rain Chance: ${dsData.daily.data[0].precipProbability * 100}%
-Powered by darksky.net`});
+Powered by darksky.net
+`});
 request(config.LAUNCH_OPTIONS, (err, response, data) => {
   if (data.results[0].status.id == '3') {
-    var success = 1
+    var success = 1;
   }
   else {
-    var success = 0
-  })
+    var success = 0;
+  }
+})
   .then(function(data) {
   launchMsg = `
 Next launch at Cape Canaveral, FL: ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")} caldate
