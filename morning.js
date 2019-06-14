@@ -31,14 +31,14 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {
   }
   else {
     var success = 0
-  }
+  })
   .then(function(data) {
   launchMsg = `
 Next launch at Cape Canaveral, FL: ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")} caldate
 Rocket: ${data.results[success].rocket.configuration.name}
 Launch Agency: ${data.results[success].rocket.configuration.launch_service_provider}
 Mission: ${data.results[success].mission.name}
-Status: ${data.results[success].status.name}`});
+Status: ${data.results[success].status.name}`})
 .then(function() {
   notification = service.notifications
   .create({
