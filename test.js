@@ -35,7 +35,7 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {})
     var success = 0;
   }
 })
-  .then(function(data) {
+  .then(function(data, success) {
   launchMsg = `
 Next launch at Cape Canaveral, FL: ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")} caldate
 Rocket: ${data.results[success].rocket.configuration.name}
