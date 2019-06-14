@@ -28,14 +28,6 @@ Powered by darksky.net
 `});
 request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 .then(function(data) {
-  if (data.results[0].status.id == '3') {
-    var success = 1;
-  }
-  else {
-    var success = 0;
-  }
-})
-  .then(function(data, success) {
   launchMsg = `
 Next launch at Cape Canaveral, FL: ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")} caldate
 Rocket: ${data.results[success].rocket.configuration.name}
