@@ -21,7 +21,7 @@ function moonEmoji(phase) {
       emoji = '🌕';
       break;
     case 'Waning gibbous':
-      emoji = '🌒';
+      emoji = '🌖';
       break;
     case 'Last Quarter':
       emoji = '🌗';
