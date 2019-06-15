@@ -1,7 +1,5 @@
 const request = require('request-promise');
 const config = require('./config');
-const chrono = require('chrono-node');
-var dateFormat = require('dateformat');
 
 /*const twilio = require('twilio')(
   process.env.TWILIO_ACCOUNT, process.env.TWILIO_TOKEN

@@ -1,3 +1,6 @@
+const chrono = require('chrono-node');
+var dateFormat = require('dateformat');
+
 function moonEmoji(phase) {
     switch(phase) {
       case 'New moon':
