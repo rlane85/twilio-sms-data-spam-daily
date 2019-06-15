@@ -28,11 +28,7 @@ function moonEmoji(phase) {
     return emoji;
   }
 const MSF_OPTIONS = {
-  uri: 'https://' + process.env.MSF_KEY + ':MYSPORTSFEEDS@api.mysportsfeeds.com/v2.1/pull/mlb/2019-regular/date/20190331/games.json',
-  headers: {
-    'User-Agent': 'Request'
-  },
-json: true // Automatically parses the JSON string in the response
+  dailyGames: 'https://' + process.env.MSF_KEY + ':MYSPORTSFEEDS@api.mysportsfeeds.com/v2.1/pull/mlb/2019-regular/date/'
 };
 const WU_OPTIONS = {
     uri: 'https://api.weather.com/v2/pws/observations/current',

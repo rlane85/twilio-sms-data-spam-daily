@@ -12,7 +12,9 @@ const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
   return JSON.stringify({ binding_type: 'sms', address: number });
 });
 */
-request(config.MSF_OPTIONS, (err, response, data) => {})
+  request({uri: config.MSF_OPTIONS.dailyGames+'20190331/games.json',
+ headers: {'User-Agent': 'Request' },
+ json: true}, (err, response, data) => {})
 .then(function(data) {
   console.log(data.games[0].schedule.id);
           /*notification = service.notifications
