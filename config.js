@@ -54,7 +54,7 @@ const HERE_OPTIONS = {
   json: true // Automatically parses the JSON string in the response
 };
 module.exports = {
-    WU_OPTIONS,
+    WU_OPTIONS, 
     WUSUMMARY_OPTIONS,
     LAUNCH_OPTIONS,
     DS_OPTIONS,
