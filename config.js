@@ -27,6 +27,9 @@ function moonEmoji(phase) {
       case 'Waning crescent':
         emoji = '🌘';
         break;
+      default:
+        emoji = '';
+        break;
     }
     return emoji;
   }
