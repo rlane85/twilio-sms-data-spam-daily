@@ -27,8 +27,13 @@ function moonEmoji(phase) {
     }
     return emoji;
   }
-  
-
+const MSF_OPTIONS = {
+  uri: 'https://' + process.env.MSF_KEY + ':MYSPORTSFEEDS@api.mysportsfeeds.com/v2.1/pull/mlb/2019-regular/date/',
+  headers: {
+    'User-Agent': 'Request'
+  },
+json: true // Automatically parses the JSON string in the response
+};
 const WU_OPTIONS = {
     uri: 'https://api.weather.com/v2/pws/observations/current',
     qs: {
@@ -90,5 +95,6 @@ module.exports = {
     LAUNCH_OPTIONS,
     DS_OPTIONS,
     HERE_OPTIONS,
-    moonEmoji
+    moonEmoji,
+    MSF_OPTIONS
 };

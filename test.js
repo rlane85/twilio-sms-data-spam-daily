@@ -1,28 +1,23 @@
 const request = require('request-promise');
 const config = require('./config');
-const twilio = require('twilio')(
+/*const twilio = require('twilio')(
   process.env.TWILIO_ACCOUNT, process.env.TWILIO_TOKEN
 );
 var numbers = new Array();
 numbers = ['+13214033188'];
 
 const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
-
-const bindings = numbers.map(number => {
+*/
+/*const bindings = numbers.map(number => {
   return JSON.stringify({ binding_type: 'sms', address: number });
 });
+*/
 
-request(config.HERE_OPTIONS, (err, response, data) => {})
+console.log(url);
+request({config.MSF_options+'20190331/games.json'}, (err, response, data) => {})
 .then(function(data) {
-  emoji = config.moonEmoji('New moon');//data.astronomy.astronomy[0].moonPhase);
-msg = `
-Current moon phase: ${data.astronomy.astronomy[0].moonPhase*100}%
-${emoji} ${data.astronomy.astronomy[0].moonPhaseDesc}
-Moon Rise: ${data.astronomy.astronomy[0].moonrise}
-Moon Set: ${data.astronomy.astronomy[0].moonset}
-`})    
-.then(function() {
-          console.log(msg);
+  console.log(url);
+  console.log(data.games[0].schedule.id);
           /*notification = service.notifications
             .create({
               toBinding: bindings,
