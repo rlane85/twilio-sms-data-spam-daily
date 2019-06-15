@@ -21,7 +21,6 @@ Forecast for ${dateFormat(dsData.daily.data[0].time * 1000, "ddd m/d")}:
 ${dsData.daily.data[0].summary}
 Sunrise: ${dateFormat(dsData.daily.data[0].sunriseTime * 1000, "h:MM")}
 Sunset: ${dateFormat(dsData.daily.data[0].sunsetTime * 1000, "h:MM")}
-Moonphase: ${dsData.daily.data[0].moonPhase * 100}%
 Feels Like: ${dsData.daily.data[0].apparentTemperatureLow}° - ${dsData.daily.data[0].apparentTemperatureHigh}° (at ${dateFormat(dsData.daily.data[0].apparentTemperatureHighTime * 1000, "h:MM")})
 Rain Chance: ${dsData.daily.data[0].precipProbability * 100}%
 Powered by darksky.net

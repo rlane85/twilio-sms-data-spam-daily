@@ -21,7 +21,6 @@ Forecast for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}:
 ${dsData.daily.data[1].summary}
 Sunrise: ${dateFormat(dsData.daily.data[1].sunriseTime * 1000, "h:MM")}
 Sunset: ${dateFormat(dsData.daily.data[1].sunsetTime * 1000, "h:MM")}
-Moonphase: ${dsData.daily.data[1].moonPhase * 100}%
 Feels Like: Low ${dsData.daily.data[1].apparentTemperatureLow}° - High ${dsData.daily.data[0].apparentTemperatureHigh}° (at ${dateFormat(dsData.daily.data[1].apparentTemperatureHighTime * 1000, "h:MM")})
 Rain Chance: ${dsData.daily.data[1].precipProbability * 100}%
 Powered by darksky.net
@@ -37,8 +36,7 @@ Status: ${data.results[0].status.name}
 `})
 .then(function() {
   epiMsg = `
-For more info please reply to this number with a keyword: current, summary, launch, or forecast (defaults to tomorrow; add keyword "today" to see the today's forecast - eg "forecast today").
-Link to known issues and list of things I would like to add: https://ahomeconnected.com/index.php/workin-on-it/`})
+For keywords reply with "?". Link to known issues and list of things I would like to add: https://ahomeconnected.com/index.php/workin-on-it/`})
 .then(function() {
   console.log(launchMsg+dsMsg+epiMsg);
   notification = service.notifications
