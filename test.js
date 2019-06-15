@@ -16,7 +16,7 @@ const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
 });
 */
 //var newDate = dateFormat(chrono.parseDate('today'), "yyyymmdd");
-console.log(julianDate('today'));
+console.log(config.julianDate('today'));
 //console.log(newDate);
 request(config.msfNewDate('today'), (err, response, data) => {})
 .then(function(data) {
