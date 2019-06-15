@@ -14,7 +14,7 @@ const bindings = numbers.map(number => {
   return JSON.stringify({ binding_type: 'sms', address: number });
 });
 
-(config.DS_OPTIONS, (err, response, dsData) => {})
+request(config.DS_OPTIONS, (err, response, dsData) => {})
   .then(function(dsData) {
     dsMsg = `
 Forecast for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}:
