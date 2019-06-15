@@ -24,7 +24,7 @@ const bindings = numbers.map(number => {
 
 request(config.HERE_OPTIONS, (err, response, data) => {})
 .then(function(data) {
-  emoji = moonEmoji(data.astronomy.astronomy[0].moonPhase);
+  emoji = moonEmoji(.4);//data.astronomy.astronomy[0].moonPhase);
 msg = `
 Current moon phase: ${data.astronomy.astronomy[0].moonPhase*100}%
 ${emoji}${data.astronomy.astronomy[0].moonPhaseDesc}
@@ -33,10 +33,10 @@ Moon Set: ${data.astronomy.astronomy[0].moonset}
 `})    
 .then(function() {
           console.log(msg);
-          notification = service.notifications
+          /*notification = service.notifications
             .create({
               toBinding: bindings,
               body: msg
-            });
+            });*/
         });
       
