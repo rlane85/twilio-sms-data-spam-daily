@@ -13,10 +13,8 @@ const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
 });
 */
 
-console.log(url);
 request(config.MSF_options+'20190331/games.json', (err, response, data) => {})
 .then(function(data) {
-  console.log(url);
   console.log(data.games[0].schedule.id);
           /*notification = service.notifications
             .create({
