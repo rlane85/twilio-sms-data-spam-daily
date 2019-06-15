@@ -1,3 +1,34 @@
+function moonEmoji(phase) {
+    switch(phase) {
+      case 'New moon':
+        emoji = '🌑';
+        break;
+      case 'Waxing crescent':
+        emoji = '🌒';
+        break;
+      case 'First Quarter':
+        emoji = '🌓';
+        break;
+      case 'Waxing gibbous':
+        emoji = '🌔';
+        break;
+      case 'Full moon':
+        emoji = '🌕';
+        break;
+      case 'Waning gibbous':
+        emoji = '🌖';
+        break;
+      case 'Last Quarter':
+        emoji = '🌗';
+        break;
+      case 'Waning crescent':
+        emoji = '🌘';
+        break;
+    }
+    return emoji;
+  }
+  
+
 const WU_OPTIONS = {
     uri: 'https://api.weather.com/v2/pws/observations/current',
     qs: {
@@ -58,5 +89,6 @@ module.exports = {
     WUSUMMARY_OPTIONS,
     LAUNCH_OPTIONS,
     DS_OPTIONS,
-    HERE_OPTIONS
+    HERE_OPTIONS,
+    moonEmoji
 };
