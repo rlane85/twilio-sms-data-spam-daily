@@ -4,9 +4,33 @@ const twilio = require('twilio')(
   process.env.TWILIO_ACCOUNT, process.env.TWILIO_TOKEN
 );
 function moonEmoji(phase) {
-  emoji = ['🌕','🌖','🌗','🌘','🌑','🌒','🌓','🌔','🌙'];
-  index = Math.round(phase / 12.5);
-  return emoji[index];
+  switch(phase) {
+    case 'New moon':
+      emoji = '🌑';
+      break;
+    case 'Waxing crescent':
+      emoji = '🌒';
+      break;
+    case 'First quarter':
+      emoji = '🌓';
+      break;
+    case 'Waxing gibbous':
+      emoji = '🌔';
+      break;
+    case 'Full moon':
+      emoji = '🌕';
+      break;
+    case 'Waning gibbous':
+      emoji = '🌒';
+      break;
+    case 'Last quarter':
+      emoji = '🌗';
+      break;
+    case 'Waning crescent':
+      emoji = '🌘';
+      break;
+  }
+  return emoji;
 }
 var numbers = new Array();
 numbers = ['+13214033188'];
@@ -19,7 +43,7 @@ const bindings = numbers.map(number => {
 
 request(config.HERE_OPTIONS, (err, response, data) => {})
 .then(function(data) {
-  emoji = moonEmoji(22);//data.astronomy.astronomy[0].moonPhase);
+  emoji = moonEmoji('Waxing crescent');//data.astronomy.astronomy[0].moonPhase);
 msg = `
 Current moon phase: ${data.astronomy.astronomy[0].moonPhase*100}%
 ${emoji}${data.astronomy.astronomy[0].moonPhaseDesc}
