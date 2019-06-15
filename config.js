@@ -27,9 +27,18 @@ function moonEmoji(phase) {
     }
     return emoji;
   }
-const MSF_OPTIONS = {
-  dailyGames: 'https://' + process.env.MSF_KEY + ':MYSPORTSFEEDS@api.mysportsfeeds.com/v2.1/pull/mlb/2019-regular/date/'
+function julianDate(dateWords) {
+    newDate = dateFormat(chrono.parseDate(dateWords), "yyyymmdd");
+    return newDate;
+}
+function msfNewDate(date) {
+    var MSF_OPTIONS = {
+      uri: 'https://' + process.env.MSF_KEY + ':MYSPORTSFEEDS@api.mysportsfeeds.com/v2.1/pull/mlb/2019-regular/date/' + julianDate(date) + '/games.json',
+      headers: {'User-Agent': 'Request' },
+      json: true}
+    return MSF_OPTIONS;
 };
+
 const WU_OPTIONS = {
     uri: 'https://api.weather.com/v2/pws/observations/current',
     qs: {
@@ -92,5 +101,6 @@ module.exports = {
     DS_OPTIONS,
     HERE_OPTIONS,
     moonEmoji,
-    MSF_OPTIONS
+    MSF_OPTIONS,
+    msfNewDate
 };
