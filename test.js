@@ -6,10 +6,10 @@ const twilio = require('twilio')(
 var dateFormat = require('dateformat');
 function moonEmoji(phase) {
   if (phase >= 0.5) {
-    emoji = 🌕;
+    emoji = '🌕';
   }
   else {
-    emoji = 🌑;
+    emoji = '🌑';
   }
   return emoji;
 }
