@@ -101,5 +101,6 @@ module.exports = {
     DS_OPTIONS,
     HERE_OPTIONS,
     moonEmoji,
-    msfNewDate
+    msfNewDate,
+    julianDate
 };
