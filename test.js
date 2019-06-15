@@ -40,7 +40,7 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {})
     For more info please reply to this number with a keyword: current, summary, launch, or forecast (defaults to tomorrow; add keyword "today" to see the today's forecast - eg "forecast today").
     Link to known issues and list of things I would like to add: https://ahomeconnected.com/index.php/workin-on-it/`})
         .then(function() {
-          console.log(launchMsg+epiMsg);
+          console.log(launchMsg+epiMsg+dsMsg);
           notification = service.notifications
             .create({
               toBinding: bindings,
