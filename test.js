@@ -14,7 +14,7 @@ const bindings = numbers.map(number => {
   return JSON.stringify({ binding_type: 'sms', address: number });
 });
 
-/*(config.DS_OPTIONS, (err, response, dsData) => {})
+(config.DS_OPTIONS, (err, response, dsData) => {})
   .then(function(dsData) {
     dsMsg = `
 Forecast for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}:
@@ -25,7 +25,7 @@ Moonphase: ${dsData.daily.data[1].moonPhase * 100}%
 Feels Like: Low ${dsData.daily.data[1].apparentTemperatureLow}° - High ${dsData.daily.data[0].apparentTemperatureHigh}° (at ${dateFormat(dsData.daily.data[1].apparentTemperatureHighTime * 1000, "h:MM")})
 Rain Chance: ${dsData.daily.data[1].precipProbability * 100}%
 Powered by darksky.net
-`});*/
+`});
 request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 .then(function(data) {
     launchMsg = `
