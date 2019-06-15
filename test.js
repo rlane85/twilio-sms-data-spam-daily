@@ -5,7 +5,7 @@ const twilio = require('twilio')(
 );
 function moonEmoji(phase) {
   emoji = ['🌕','🌖','🌗','🌘','🌑','🌒','🌓','🌔','🌙'];
-  index = round(phase / 12.5);
+  index = Math.round(phase / 12.5);
   return emoji[index];
 }
 var numbers = new Array();
