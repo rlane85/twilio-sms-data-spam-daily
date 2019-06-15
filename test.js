@@ -11,7 +11,7 @@ function moonEmoji(phase) {
     case 'Waxing crescent':
       emoji = '🌒';
       break;
-    case 'First quarter':
+    case 'First Quarter':
       emoji = '🌓';
       break;
     case 'Waxing gibbous':
@@ -21,9 +21,9 @@ function moonEmoji(phase) {
       emoji = '🌕';
       break;
     case 'Waning gibbous':
-      emoji = '🌖';
+      emoji = '🌒';
       break;
-    case 'Last quarter':
+    case 'Last Quarter':
       emoji = '🌗';
       break;
     case 'Waning crescent':
