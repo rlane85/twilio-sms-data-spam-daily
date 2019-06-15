@@ -3,15 +3,10 @@ const config = require('./config');
 const twilio = require('twilio')(
   process.env.TWILIO_ACCOUNT, process.env.TWILIO_TOKEN
 );
-var dateFormat = require('dateformat');
 function moonEmoji(phase) {
-  if (phase >= 0.5) {
-    emoji = '🌕';
-  }
-  else {
-    emoji = '🌑';
-  }
-  return emoji;
+  emoji = ['🌕','🌖','🌗','🌘','🌑','🌒','🌓','🌔','🌙'];
+  index = round(phase / 12.5);
+  return emoji[index];
 }
 var numbers = new Array();
 numbers = ['+13214033188'];
@@ -24,7 +19,7 @@ const bindings = numbers.map(number => {
 
 request(config.HERE_OPTIONS, (err, response, data) => {})
 .then(function(data) {
-  emoji = moonEmoji(.4);//data.astronomy.astronomy[0].moonPhase);
+  emoji = moonEmoji(88);//data.astronomy.astronomy[0].moonPhase);
 msg = `
 Current moon phase: ${data.astronomy.astronomy[0].moonPhase*100}%
 ${emoji}${data.astronomy.astronomy[0].moonPhaseDesc}
