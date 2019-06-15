@@ -27,7 +27,7 @@ request(config.HERE_OPTIONS, (err, response, data) => {})
   emoji = moonEmoji(data.astronomy.astronomy[0].moonPhase);
 msg = `
 Current moon phase: ${data.astronomy.astronomy[0].moonPhase*100}%
-emoji${data.astronomy.astronomy[0].moonPhaseDesc}
+${emoji}${data.astronomy.astronomy[0].moonPhaseDesc}
 Moon Rise: ${data.astronomy.astronomy[0].moonrise}
 Moon Set: ${data.astronomy.astronomy[0].moonset}
 `})    
