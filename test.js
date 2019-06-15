@@ -13,7 +13,7 @@ const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
 });
 */
 request(config.MSF_options, (err, response, data) => {})
-.then(function(data) {
+.then(function() {
   console.log(data.games[0].schedule.id);
           /*notification = service.notifications
             .create({
