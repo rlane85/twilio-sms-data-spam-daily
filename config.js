@@ -28,7 +28,7 @@ function moonEmoji(phase) {
     return emoji;
   }
 const MSF_OPTIONS = {
-  uri: 'https://' + process.env.MSF_KEY + ':MYSPORTSFEEDS@api.mysportsfeeds.com/v2.1/pull/mlb/2019-regular/date/',
+  uri: 'https://' + process.env.MSF_KEY + ':MYSPORTSFEEDS@api.mysportsfeeds.com/v2.1/pull/mlb/2019-regular/date/20190331/games.json',
   headers: {
     'User-Agent': 'Request'
   },
