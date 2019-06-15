@@ -19,7 +19,7 @@ const bindings = numbers.map(number => {
 
 request(config.HERE_OPTIONS, (err, response, data) => {})
 .then(function(data) {
-  emoji = moonEmoji(88);//data.astronomy.astronomy[0].moonPhase);
+  emoji = moonEmoji(22);//data.astronomy.astronomy[0].moonPhase);
 msg = `
 Current moon phase: ${data.astronomy.astronomy[0].moonPhase*100}%
 ${emoji}${data.astronomy.astronomy[0].moonPhaseDesc}
