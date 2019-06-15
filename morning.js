@@ -26,21 +26,14 @@ Feels Like: ${dsData.daily.data[0].apparentTemperatureLow}° - ${dsData.daily.da
 Rain Chance: ${dsData.daily.data[0].precipProbability * 100}%
 Powered by darksky.net
 `});
-request(config.LAUNCH_OPTIONS, (err, response, data) => {
-  if (data.results[0].status.id == '3') {
-    var success = 1;
-  }
-  else {
-    var success = 0;
-  }
-})
+request(config.LAUNCH_OPTIONS, (err, response, data) => {})
   .then(function(data) {
   launchMsg = `
-Next launch at Cape Canaveral, FL: ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")} caldate
-Rocket: ${data.results[success].rocket.configuration.name}
-Launch Agency: ${data.results[success].rocket.configuration.launch_service_provider}
-Mission: ${data.results[success].mission.name}
-Status: ${data.results[success].status.name}`})
+Next launch at Cape Canaveral, FL: ${dateFormat(data.results[0].net, "ddd m/d 'at' h:MM t")} caldate
+Rocket: ${data.results[0].rocket.configuration.name}
+Launch Agency: ${data.results[0].rocket.configuration.launch_service_provider}
+Mission: ${data.results[0].mission.name}
+Status: ${data.results[0].status.name}`})
 .then(function() {
   notification = service.notifications
   .create({
