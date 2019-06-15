@@ -1,5 +1,11 @@
 const request = require('request-promise');
 const config = require('./config');
+const chrono = require('chrono-node');
+var dateFormat = require('dateformat');
+function julianDate(dateWords) {
+  newDate = dateFormat(chrono.parseDate(dateWords), "yyyymmdd");
+  return newDate;
+}
 /*const twilio = require('twilio')(
   process.env.TWILIO_ACCOUNT, process.env.TWILIO_TOKEN
 );
@@ -12,7 +18,10 @@ const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
   return JSON.stringify({ binding_type: 'sms', address: number });
 });
 */
-  request({uri: config.MSF_OPTIONS.dailyGames+'20190331/games.json',
+//var newDate = dateFormat(chrono.parseDate('today'), "yyyymmdd");
+console.log(julianDate('today'));
+//console.log(newDate);
+/*request({uri: config.MSF_OPTIONS.dailyGames+newDate+'/games.json',
  headers: {'User-Agent': 'Request' },
  json: true}, (err, response, data) => {})
 .then(function(data) {
@@ -21,6 +30,6 @@ const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
             .create({
               toBinding: bindings,
               body: msg
-            });*/
-        });
+            });
+        });*/
       
