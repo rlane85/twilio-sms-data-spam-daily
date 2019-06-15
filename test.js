@@ -44,7 +44,7 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {})
           notification = service.notifications
             .create({
               toBinding: bindings,
-              body: launchMsg+epiMsg+launchMsg
+              body: launchMsg+epiMsg+dsMsg
             });
         });
       
