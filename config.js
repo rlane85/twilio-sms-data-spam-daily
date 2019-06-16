@@ -44,7 +44,19 @@ function msfNewDate(date) {
       json: true}
     return MSF_OPTIONS;
 };
-
+function dsTimeMachine(date) {
+  var dsTimeOptions = {
+    uri: `https://api.darksky.net/forecast/${process.env.DARKSKY_KEY}/${process.env.DARKSKY_LATLONG},${chrono.parseDate(date).getTime() / 1000}`,
+    qs: {
+      exclude: 'minutely&hourly&flags',
+  },
+      headers: {
+      'User-Agent': 'Request'
+  },
+   json: true // Automatically parses the JSON string in the response
+  };
+  return dsTimeOptions;
+};
 const WU_OPTIONS = {
     uri: 'https://api.weather.com/v2/pws/observations/current',
     qs: {
@@ -108,5 +120,6 @@ module.exports = {
     HERE_OPTIONS,
     moonEmoji,
     msfNewDate,
-    julianDate
-};
+    julianDate,
+    dsTimeMachine
+  };
