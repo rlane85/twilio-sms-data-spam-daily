@@ -30,19 +30,19 @@ request(config.WU_OPTIONS, (err, response, data) => {}).then(function(data){
 `Current from WU Station ${data.observations[0].stationID}
 Temp: ${data.observations[0].imperial.temp}
 `});
-
+*/
 request(config.WUSUMMARY_OPTIONS, (err, response, data) => {}).then(function(data){
     summaryMsg=
 `Today's summary from WU Station ${data.summaries[6].stationID}
 Wind gust high: ${data.summaries[6].imperial.windgustHigh} mph
 `});
-*/
+
 request(config.HERE_OPTIONS, (err, response, data) => {}).then(function (data){
     moonMsg =
 `Current moon phase: ${data.astronomy.astronomy[0].moonPhase*100}% ${config.moonEmoji(data.astronomy.astronomy[0].moonPhaseDesc)}${data.astronomy.astronomy[0].moonPhaseDesc}`
 })
 .then(function() {
-  msg=/*launchMsg+dsMsg+currentMsg+summaryMsg+*/moonMsg;
+  msg=/*launchMsg+dsMsg+currentMsg+*/summaryMsg+moonMsg;
   console.log(msg);
 /*  notification = service.notifications
   .create({
