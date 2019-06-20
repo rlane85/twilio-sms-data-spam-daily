@@ -38,9 +38,9 @@ request(config.HERE_OPTIONS, (err, response, data) => {
 `Current moon phase: ${data.astronomy.astronomy[0].moonPhase*100}% ${config.moonEmoji(data.astronomy.astronomy[0].moonPhaseDesc)}${data.astronomy.astronomy[0].moonPhaseDesc}`});
 return;
 }
-builder();
-msg=launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg
+builder()
 .then(function() {
+  msg=launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg;
   console.log(msg);
   notification = service.notifications
   .create({
