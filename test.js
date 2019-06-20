@@ -46,7 +46,7 @@ request(config.HERE_OPTIONS, (err, response, data) => {}).then(function (data){
   epiMsg='Epilogue here';
 })
 .then(function() {
-msg=launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg;
+msg=dsMsg+currentMsg+summaryMsg+moonMsg;
   console.log(msg);
 notification = service.notifications
   .create({
