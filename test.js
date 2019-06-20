@@ -14,7 +14,7 @@ const request = require('request-promise');
         return JSON.stringify({ binding_type: 'sms', address: number });
       });
 
-request(config.DS_OPTIONS, (err, response, dsData) => {}).then(function(data){
+request(config.DS_OPTIONS, (err, response, dsData) => {}).then(function(dsData){
   dsMsg = 
 `Forecast for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}: ${dsData.daily.data[1].summary}
 Rain Chance: ${dsData.daily.data[1].precipProbability * 100}%
