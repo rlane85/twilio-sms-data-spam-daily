@@ -13,7 +13,7 @@ const request = require('request-promise');
       const bindings = numbers.map(number => {
         return JSON.stringify({ binding_type: 'sms', address: number });
       });
-function builder(msg){    
+function builder(){    
 request(config.DS_OPTIONS, (err, response, dsData) => {
   dsMsg = 
 `Forecast for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}: ${dsData.daily.data[1].summary}
@@ -36,10 +36,10 @@ Wind gust high: ${data.summaries[6].imperial.windgustHigh} mph
 request(config.HERE_OPTIONS, (err, response, data) => {
     moonMsg =
 `Current moon phase: ${data.astronomy.astronomy[0].moonPhase*100}% ${config.moonEmoji(data.astronomy.astronomy[0].moonPhaseDesc)}${data.astronomy.astronomy[0].moonPhaseDesc}`});
-msg=launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg;
-return msg;
+return;
 }
-builder()
+builder();
+msg=launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg
 .then(function() {
   console.log(msg);
   notification = service.notifications
