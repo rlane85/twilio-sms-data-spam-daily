@@ -50,9 +50,8 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 `})   
 
 .then(function() {
-  msg = `Each word in quotes represents a keyword you can reply for more information!
-  
-`+launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg
+  msg =launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg+
+'https://ahomeconnected.com/index.php/workin-on-it/';
   console.log(msg);
   notification = service.notifications
   .create({
