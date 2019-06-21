@@ -16,32 +16,45 @@ const bindings = numbers.map(number => {
 
 request(config.DS_OPTIONS, (err, response, dsData) => {})
 .then(function(dsData) {
-  dsMsg = `
-Forecast for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}:
-${dsData.daily.data[1].summary}
-Sunrise: ${dateFormat(dsData.daily.data[1].sunriseTime * 1000, "h:MM")}
-Sunset: ${dateFormat(dsData.daily.data[1].sunsetTime * 1000, "h:MM")}
-Feels Like: Low ${dsData.daily.data[1].apparentTemperatureLow}° - High ${dsData.daily.data[0].apparentTemperatureHigh}° (at ${dateFormat(dsData.daily.data[1].apparentTemperatureHighTime * 1000, "h:MM")})
+  dsMsg = 
+`"Forecast:" for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}: ${dsData.daily.data[1].summary}
 Rain Chance: ${dsData.daily.data[1].precipProbability * 100}%
-Powered by darksky.net
+
 `});
+
 request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 .then(function(data) {
-  launchMsg = `
-Next launch at Cape Canaveral, FL: ${dateFormat(data.results[0].net, "ddd m/d 'at' h:MM t")}
-Rocket: ${data.results[0].rocket.configuration.name}
-Launch Agency: ${data.results[0].rocket.configuration.launch_service_provider}
-Mission: ${data.results[0].mission.name}
-Status: ${data.results[0].status.name}
+  launchMsg = 
+`"Launch:" ${dateFormat(data.results[0].net, "ddd m/d 'at' h:MM t")}
+
 `})
+
+.then(function() {return request(config.WU_OPTIONS, (err, response, data) => {});})
+    .then(function(data) {
+    currentMsg = 
+`"Current:" Temp: ${data.observations[0].imperial.temp}
+
+`})
+
+.then(function() {return request(config.WUSUMMARY_OPTIONS, (err, response, data) => {});})
+    .then(function(data) {//index 6 is today
+    summaryMsg =
+`"Summary:" Wind gust high: ${data.summaries[6].imperial.windgustHigh} mph 
+
+`})
+.then(function() {return request(config.HERE_OPTIONS, (err, response, data) => {});})
+    .then(function(data) {
+    moonMsg =
+`"Moon:" ${Math.round(data.astronomy.astronomy[0].moonPhase*100)}% ${config.moonEmoji(data.astronomy.astronomy[0].moonPhaseDesc)}${data.astronomy.astronomy[0].moonPhaseDesc}
+
+`})   
+
 .then(function() {
-  epiMsg = `
-For keywords reply with "?". Link to known issues and list of things I would like to add: https://ahomeconnected.com/index.php/workin-on-it/`})
-.then(function() {
-  console.log(launchMsg+dsMsg+epiMsg);
+  msg = launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg
+  console.log(msg);
   notification = service.notifications
   .create({
     toBinding: bindings,
-    body: launchMsg+dsMsg+epiMsg
+    body: msg
   });
 });
