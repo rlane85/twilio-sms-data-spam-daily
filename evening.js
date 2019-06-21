@@ -50,7 +50,9 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 `})   
 
 .then(function() {
-  msg = launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg
+  msg = `Each word in quotes represents a keyword you can reply for more information!
+  
+`+launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg
   console.log(msg);
   notification = service.notifications
   .create({
