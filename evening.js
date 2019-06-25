@@ -18,7 +18,7 @@ request(config.DS_OPTIONS, (err, response, dsData) => {})
 .then(function(dsData) {
   dsMsg = 
 `"Forecast:" for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}: ${dsData.daily.data[1].summary}
-Rain Chance: ${dsData.daily.data[1].precipProbability * 100}%
+Rain Chance: ${Math.round(dsData.daily.data[1].precipProbability * 100)}%
 
 `});
 
