@@ -6,7 +6,7 @@ const twilio = require('twilio')(
 var dateFormat = require('dateformat');
 
 var numbers = new Array();
-numbers = ['+13214033188', '+13213683060'];
+numbers = ['+13214033188'];
 
 const service = twilio.notify.services(process.env.TWILIO_NOTIFY_SERVICE_SID);
 
@@ -24,10 +24,15 @@ Rain Chance: ${dsData.daily.data[1].precipProbability * 100}%
 
 request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 .then(function(data) {
+if (data.results[0].status.id==6 || data.results[0].status.id==3){
+  launchMsg = 
+`"Launch:" ${dateFormat(data.results[1].net, "ddd m/d 'at' h:MM t")}
+`}
+else{
   launchMsg = 
 `"Launch:" ${dateFormat(data.results[0].net, "ddd m/d 'at' h:MM t")}
-
-`})
+`}
+})
 
 .then(function() {return request(config.WU_OPTIONS, (err, response, data) => {});})
     .then(function(data) {
