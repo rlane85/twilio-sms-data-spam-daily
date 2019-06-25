@@ -24,8 +24,10 @@ Rain Chance: ${Math.round(dsData.daily.data[1].precipProbability * 100)}%
 
 request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 .then(function(data) {
+  if (data.results[0].status.id==6 || data.results[0].status.id==3){success = 1}
+  else {success=0}
   launchMsg = 
-`"Launch:" ${dateFormat(data.results[0].net, "ddd m/d 'at' h:MM t")}
+`"Launch:" ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")}
 
 `})
 
