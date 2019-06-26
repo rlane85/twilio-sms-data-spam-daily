@@ -22,7 +22,7 @@ ${dsData.daily.data[0].summary}
 Sunrise: ${dateFormat(dsData.daily.data[0].sunriseTime * 1000, "h:MM")}
 Sunset: ${dateFormat(dsData.daily.data[0].sunsetTime * 1000, "h:MM")}
 Feels Like: ${dsData.daily.data[0].apparentTemperatureLow}° - ${dsData.daily.data[0].apparentTemperatureHigh}° (at ${dateFormat(dsData.daily.data[0].apparentTemperatureHighTime * 1000, "h:MM")})
-Rain Chance: ${dsData.daily.data[0].precipProbability * 100}%
+Rain Chance: ${Math.round(dsData.daily.data[0].precipProbability * 100)}%
 Powered by darksky.net
 `});
 request(config.LAUNCH_OPTIONS, (err, response, data) => {})
