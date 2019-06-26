@@ -41,7 +41,7 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 .then(function() {return request(config.WUSUMMARY_OPTIONS, (err, response, data) => {});})
     .then(function(data) {//index 6 is today
     summaryMsg =
-`"Summary:" Wind gust high: ${data.summaries[6].imperial.windgustHigh} mph 
+`"Summary:" Heat index high: ${data.summaries[6].imperial.heatindexHigh}
 
 `})
 .then(function() {return request(config.HERE_OPTIONS, (err, response, data) => {});})
@@ -53,7 +53,8 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 
 .then(function() {
   msg =launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg+
-'https://ahomeconnected.com/index.php/workin-on-it/';
+`Added more info for "summary". 
+https://ahomeconnected.com/index.php/workin-on-it/`;
   console.log(msg);
   notification = service.notifications
   .create({
