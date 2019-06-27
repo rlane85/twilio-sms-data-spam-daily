@@ -53,8 +53,7 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 
 .then(function() {
   msg =launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg+
-`Added more info for "summary". 
-https://ahomeconnected.com/index.php/workin-on-it/`;
+`https://ahomeconnected.com/index.php/workin-on-it/`;
   console.log(msg);
   notification = service.notifications
   .create({
