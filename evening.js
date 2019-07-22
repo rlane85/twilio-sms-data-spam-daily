@@ -52,8 +52,7 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {})
 `})   
 
 .then(function() {
-  msg =launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg+
-`https://ahomeconnected.com/index.php/workin-on-it/`;
+  msg =launchMsg+dsMsg+currentMsg+summaryMsg+moonMsg;
   console.log(msg);
   notification = service.notifications
   .create({
