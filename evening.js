@@ -17,7 +17,7 @@ const bindings = numbers.map(number => {
 request(config.DS_OPTIONS, (err, response, dsData) => {})
 .then(function(dsData) {
   dsMsg = 
-`"Forecast:" for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}: ${dsData.daily.data[1].summary}
+`Forecast: for ${dateFormat(dsData.daily.data[1].time * 1000, "ddd m/d")}: ${dsData.daily.data[1].summary}
 Rain Chance: ${Math.round(dsData.daily.data[1].precipProbability * 100)}%
 
 `});
@@ -27,27 +27,27 @@ request(config.LAUNCH_OPTIONS, (err, response, data) => {})
   if (data.results[0].status.id==6 || data.results[0].status.id==3){success = 1}
   else {success=0}
   launchMsg = 
-`"Launch:" ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")}
+`Launch: ${dateFormat(data.results[success].net, "ddd m/d 'at' h:MM t")}
 
 `})
 
 .then(function() {return request(config.WU_OPTIONS, (err, response, data) => {});})
     .then(function(data) {
     currentMsg = 
-`"Current:" Temp: ${data.observations[0].imperial.temp}
+`Current: Temp: ${data.observations[0].imperial.temp}
 
 `})
 
 .then(function() {return request(config.WUSUMMARY_OPTIONS, (err, response, data) => {});})
     .then(function(data) {//index 6 is today
     summaryMsg =
-`"Summary:" Heat index high: ${data.summaries[6].imperial.heatindexHigh}
+`Summary: Heat index high: ${data.summaries[6].imperial.heatindexHigh}
 
 `})
 .then(function() {return request(config.HERE_OPTIONS, (err, response, data) => {});})
     .then(function(data) {
     moonMsg =
-`"Moon:" ${Math.round(data.astronomy.astronomy[0].moonPhase*100)}% ${config.moonEmoji(data.astronomy.astronomy[0].moonPhaseDesc)}${data.astronomy.astronomy[0].moonPhaseDesc}
+`Moon: ${Math.round(data.astronomy.astronomy[0].moonPhase*100)}% ${config.moonEmoji(data.astronomy.astronomy[0].moonPhaseDesc)}${data.astronomy.astronomy[0].moonPhaseDesc}
 
 `})   
 
